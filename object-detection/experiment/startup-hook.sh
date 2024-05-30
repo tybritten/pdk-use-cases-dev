@@ -39,4 +39,4 @@ check_and_download $file2 $url2
 check_and_download $file3 $url3
 
 
-pip install torchvision pycocotools sahi 
+pip install torchvision pycocotools sahi torchsummary python_pachyderm
