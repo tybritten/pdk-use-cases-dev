@@ -18,15 +18,22 @@ check_and_download() {
     local attempt=1
 
     while [ $attempt -le $max_attempts ]; do
-        if [ -f "$file_path" ]; then
-            echo "File $file_path already exists."
-            return 0
-        else
-            echo "Attempt $attempt: File $file_path does not exist. Downloading..."
-            if wget -T 30 -O "$file_path" "$url"; then
-                echo "Successfully downloaded $file_path."
-                break
+            if [ -f "$file_path" ]; then
+                echo "File $file_path already exists."
+                return 0
+            else
+                echo "Attempt $attempt: File $file_path does not exist. Downloading..."
+                if wget -T 30 -O "$file_path" "$url"; then
+                    echo "Successfully downloaded $file_path."
+                    break
+                fi
             fi
-        fi
         echo "Failed to download. Retrying..."
         attempt=$(( $attempt + 1 ))
+        done
+        }
+
+# Check and download the files
+check_and_download $file1 $url1
+check_and_download $file2 $url2
+check_and_download $file3 $url3
