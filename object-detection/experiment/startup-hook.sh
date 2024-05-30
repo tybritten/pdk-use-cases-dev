@@ -37,3 +37,6 @@ check_and_download() {
 check_and_download $file1 $url1
 check_and_download $file2 $url2
 check_and_download $file3 $url3
+
+
+pip install torchvision pycocotools sahi 
