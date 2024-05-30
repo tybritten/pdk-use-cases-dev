@@ -23,7 +23,7 @@ check_and_download() {
                 return 0
             else
                 echo "Attempt $attempt: File $file_path does not exist. Downloading..."
-                if wget -T 30 -O "$file_path" "$url"; then
+                if wget --progress=bar:force:noscroll -T 30 -O "$file_path" "$url"; then
                     echo "Successfully downloaded $file_path."
                     break
                 fi
