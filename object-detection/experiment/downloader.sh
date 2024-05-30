@@ -1,9 +1,9 @@
 #!/bin/bash
-mkdir -p /nvmefs1/andrew.mendez
+mkdir -p /models
 # Define file paths
-file1="/nvmefs1/andrew.mendez/frcnn_3_xview.pth"
-file2="/nvmefs1/andrew.mendez/frcnn_4_xview.pth"
-file3="/nvmefs1/andrew.mendez/frcnn_xview.pth"
+file1="/models/frcnn_3_xview.pth"
+file2="/models/frcnn_4_xview.pth"
+file3="/models/frcnn_xview.pth"
 
 # URLs for downloading the files
 url1="https://determined-ai-xview-coco-dataset.s3.us-west-2.amazonaws.com/frcnn_3_xview.pth"
@@ -37,6 +37,3 @@ check_and_download() {
 check_and_download $file1 $url1
 check_and_download $file2 $url2
 check_and_download $file3 $url3
-
-
-pip install torchvision pycocotools sahi torchsummary python_pachyderm
